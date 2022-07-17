@@ -1,0 +1,521 @@
+/*Java Script Classes*/
+
+.active {
+    color: #fff!important
+}
+
+.CardApperance {
+    transform: translate(-20px, -370px) rotateX(0deg) !important
+}
+
+
+/*Media Query*/
+
+@media (max-width:575px) {
+    header .head .links {
+        display: none
+    }
+    h1,
+    span {
+        font-size: 20px
+    }
+    p,
+    h2 {
+        font-size: 15px;
+        font-weight: 500
+    }
+    .container {
+        max-width: 230px;
+        margin: 170px auto;
+    }
+    #Services>div:last-child div {
+        width: 200px;
+        height: 120px;
+    }
+    #About img {
+        width: 200px;
+    }
+    #About>div:last-child {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 370px
+    }
+    #About>div:last-child p {
+        width: 260px;
+    }
+    #Contact {
+        margin: 0 10px
+    }
+    footer .contact {
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+    }
+    footer .contact .Social {
+        width: 180px;
+        flex-direction: row;
+        height: 60px;
+    }
+}
+
+@media (min-width:576px) {
+    .container {
+        max-width: 540px;
+        margin: 170px 80px;
+    }
+    p,
+    h2 {
+        font-weight: 500;
+        font-size: 20px
+    }
+    h1,
+    span {
+        font-size: 30px;
+    }
+    header .head i {
+        display: none
+    }
+    header .head .links {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+    #Services>div:last-child div {
+        width: 300px;
+        height: 180px;
+    }
+    #About>div:last-child {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 370px
+    }
+    footer .contact {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact .Social {
+        flex-direction: column;
+        height: 120px;
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        max-width: 720px
+    }
+    header .head i {
+        display: none
+    }
+    #About>div:last-child {
+        flex-direction: row;
+        justify-content: space-between
+    }
+    footer .contact {
+        flex-direction: row;
+    }
+    #Contact {
+        margin: 0 80px;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        max-width: 960px;
+    }
+    header .head i {
+        display: none
+    }
+    #About>div:last-child {
+        justify-content: space-around
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    header .head i {
+        display: none
+    }
+}
+
+
+/*global*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --maincolor--: #342e2e;
+    --seccolor--: #ff9600;
+    --thcolor--: #fff;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    background-color: var(--thcolor--);
+}
+
+i {
+    color: var(--thcolor--)
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+span {
+    color: var(--seccolor--);
+    font-weight: bold
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    cursor: pointer
+}
+
+a {
+    color: var(--seccolor--);
+    text-decoration: none
+}
+
+li {
+    list-style: none
+}
+
+
+/*optionBox*/
+
+.optionBox {
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    height: 100vh;
+    background-color: #342e2ed4;
+    z-index: 1000;
+}
+
+.OBTransition {
+    left: 0;
+}
+
+.optionBox .icon {
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    text-align: center;
+    padding: 6px;
+    color: var(--seccolor--);
+    cursor: pointer;
+    background-color: var(--maincolor--);
+    border-radius: 50%;
+}
+
+.optionBox h1 {
+    text-align: center;
+    color: var(--seccolor--);
+    font-weight: 500
+}
+
+.optionBox h2 {
+    color: var(--seccolor--);
+    margin-left: 10px;
+    margin-top: 70px;
+}
+
+.optionBox ul img {
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 30px;
+    margin-top: 15px;
+    transition: 1s;
+}
+
+.optionBox ul img:hover {
+    width: 100px;
+    border-radius: 0%;
+    height: auto
+}
+
+.optionBox ul button {
+    margin-top: 15px;
+    height: 35px;
+    border: 0;
+    border-radius: 10px;
+    background-color: var(--maincolor--);
+    color: var(--seccolor--);
+    cursor: pointer;
+    transform: translateX(-30px)
+}
+
+
+/*header*/
+
+header {
+    height: 100vh;
+}
+
+header .head {
+    width: 100%;
+    height: 120px;
+    background-color: var(--maincolor--);
+    display: flex;
+}
+
+header .head .logo img {
+    max-width: 120px;
+}
+
+header .head .links {
+    width: 100%;
+}
+
+header .head .links ul {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+header .head .links ul li {
+    padding-left: 20px;
+}
+
+header .head ul li a {
+    transition: 0.5s
+}
+
+header .head ul li a:hover {
+    color: #fff;
+}
+
+header .head i {
+    position: absolute;
+    right: 20px;
+    color: var(--seccolor--);
+    top: 45px;
+    font-size: 30px;
+    cursor: pointer
+}
+
+header .mobileLinks {
+    position: absolute;
+    background-color: antiquewhite;
+    width: 150px;
+    height: 200px;
+    z-index: 100;
+    right: 20px;
+    top: 20px;
+    border-radius: 5px;
+    transform: rotatex(90deg);
+    transition: 0.5s;
+}
+
+.mobileLinks ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.mobileLinks li {
+    list-style: disc
+}
+
+
+/*landingPage*/
+
+header .landingPage {
+    background-image: url(0.jpg);
+    position: relative;
+    height: calc(100vh - 120px);
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+header .landingPage .shadow {
+    height: calc(100vh - 120px);
+    background-color: #00000064;
+}
+
+header .landingPage .text {
+    text-shadow: 1px 1px 2px #0000003d;
+    color: #fff;
+    width: 90%;
+    text-align: center
+}
+
+header .landingPage .text h1 {
+    position: relative;
+    left: -100%;
+    transition: 1.5s;
+}
+
+header .landingPage .text p {
+    position: relative;
+    right: 100%;
+    transition: 2s
+}
+
+
+/*services*/
+
+#Services>div:last-child {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 60px;
+    width: 100%;
+}
+
+#Services>div:first-child p {
+    max-width: 390px;
+}
+
+#Services>div:last-child div {
+    position: relative;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0.1s;
+    background-color: #342e2e;
+    margin: 0 auto;
+    color: var(--seccolor--);
+    text-align: center;
+    border-radius: 20px
+}
+
+#Services>div:last-child div:hover {
+    filter: none;
+    transform: scale(1.04);
+}
+
+#Services>div:last-child div p {
+    font-size: 16px;
+    padding-top: 20px;
+    font-weight: 400;
+    transform: scale(0);
+    transition: 1s;
+    color: var(--thcolor--)
+}
+
+#Services>div:last-child div:hover p {
+    background-color: var(--maincolor--);
+    transform: translateY(-100%) scale(1);
+}
+
+#Services>div:last-child img {
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    height: 100%;
+}
+
+
+/*About*/
+
+#About>div:first-child,
+#Services>div:first-child {
+    line-height: 1.5;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+#About>div:last-child {
+    display: flex;
+    width: 100%
+}
+
+#About>div:last-child p {
+    max-width: 350px;
+    line-height: 1.5;
+    width: 100%
+}
+
+#About img {
+    width: 0;
+    transition: 2s;
+}
+
+
+/*footer*/
+
+footer {
+    background-color: var(--maincolor--);
+    color: var(--thcolor--)
+}
+
+#Contact {
+    padding-top: 50px;
+}
+
+footer .contact {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+footer .contact .Social {
+    display: flex;
+    justify-content: space-around;
+    min-width: 60px
+}
+
+footer i {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+footer .contact .Date {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+footer .contact .Date div {
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+footer .contact .Date div::after,
+.Date div::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    height: 1px;
+    width: 70%;
+    background-color: var(--seccolor--);
+}
+
+footer .foot {
+    max-width: 650px;
+    line-height: 1.5;
+    padding-bottom: 50px;
+    text-align: center
+}
+
+footer a:hover {
+    transform: scale(1.3);
+}
